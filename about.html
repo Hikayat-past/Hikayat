@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>عن المشروع - تراثنا الجميل</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdfbf8;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    /* ====== الهيدر ====== */
+    header {
+      background: linear-gradient(135deg, #6b4226, #8b5e34);
+      padding: 15px 40px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;  
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 17px;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #ffd54f; }
+
+    /* ====== بانر علوي ====== */
+    .banner {
+      background: url("about-banner.jpg") center/cover no-repeat;
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: #fff;
+      text-align: center;
+    }
+    .banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+    .banner h2 {
+      position: relative;
+      font-size: 34px;
+      z-index: 1;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    /* ====== محتوى الصفحة ====== */
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .about-text {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      margin-bottom: 50px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .about-text:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .about-text h2 {
+      color: #6b4226;
+      margin-top: 0;
+      font-size: 28px;
+    }
+    .about-text p {
+      font-size: 18px;
+      line-height: 2;
+    }
+
+    /* ====== نموذج التواصل ====== */
+    .contact-form {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .contact-form h2 {
+      color: #6b4226;
+      margin-top: 0;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 28px;
+    }
+    .contact-form .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px 15px 15px 45px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: 0.3s;
+      font-family: 'Tajawal', sans-serif;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #6b4226;
+      outline: none;
+      box-shadow: 0 0 8px rgba(107,66,38,0.3);
+    }
+    .contact-form .form-group i {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      color: #6b4226;
+      font-size: 18px;
+    }
+    .contact-form button {
+      width: 100%;
+      background: #6b4226;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .contact-form button:hover {
+      background: #8b5e34;
+      transform: translateY(-2px);
+    }
+
+    .success-message {
+      text-align: center;
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    /* ====== زر العودة ====== */
+    .back-btn {
+      text-align: center;
+      margin: 50px 0 30px 0;
+    }
+    .back-btn a {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #6b4226;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .back-btn a:hover {
+      background: #8b5e34;
+      transform: translateY(-2px);
+    }
+
+    /* ====== الفوتر ====== */
+    footer {
+      background: #6b4226;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+    footer p { margin: 0; }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 20px; }
+      .banner h2 { font-size: 24px; }
+      .about-text h2, .contact-form h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>حكايات جدي</h1>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="stories.html">الحكايات</a>
+    <a href="about.html">عن المشروع</a>
+  </nav>
+</header>
+
+<div class="banner">
+  <h2>📜  عن المشروع</h2>
+</div>
+
+<div class="container">
+  <div class="about-text">
+    <h2>عن المشروع</h2>
+    <p>
+      نحن فريق من المبدعين الشباب، وُلدنا على أرض حضرموت العريقة، ونحمل في قلوبنا شغفاً عميقاً بتراثها الغني.
+      مشروع “حكايات جدي” يهدف إلى توثيق الحكايات الشفهية من مختلف مناطق حضرموت،
+      وتقديمها في قالب رقمي مبتكر يجمع بين السرد الصوتي والرسوم الفنية والتفاعل،
+      لضمان بقاء تراثنا حيًا في قلوب الأجيال القادمة.
+    </p>
+  </div>
+
+  <div class="contact-form">
+    <h2>تواصل معنا</h2>
+    <form id="contactForm">
+      <div class="form-group">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="الاسم" required>
+      </div>
+      <div class="form-group">
+        <i class="fa fa-envelope"></i>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+      </div>
+      <div class="form-group">
+        <i class="fa fa-comment"></i>
+        <textarea rows="5" placeholder="رسالتك" required></textarea>
+      </div>
+      <button type="submit">📨 إرسال</button>
+      <div class="success-message" id="successMsg"></div>
+    </form>
+  </div>
+
+  <div class="back-btn">
+    <a href="index.html">⬅ العودة إلى الصفحة الرئيسية</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 حكايات جدي - جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('successMsg').textContent = "✅ تم إرسال الرسالة بنجاح! سنعاود التواصل معك قريباً.";
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
